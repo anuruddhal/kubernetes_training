@@ -1,0 +1,23 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  labels:
+    app: "service"
+  name: "service-deployment"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "service"
+  template:
+    metadata:
+      labels:
+        app: "service"
+    spec:
+      containers:
+      - image: "anuruddhal/sample2:1.0.0"
+        name: "service-deployment"
+        ports:
+        - containerPort: 9096
+          name: "port-1-service"
+          protocol: "TCP"
