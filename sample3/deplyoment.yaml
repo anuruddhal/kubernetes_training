@@ -1,23 +1,19 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  labels:
-    app: "service"
-  name: "service-deployment"
+  name: "hello-deployment"
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: "service"
+      app: "hello-app"
   template:
     metadata:
       labels:
-        app: "service"
+        app: "hello-app"
     spec:
       containers:
-      - image: "anuruddhal/sample2:1.0.0"
-        name: "service-deployment"
-        ports:
-        - containerPort: 9096
-          name: "port-1-service"
-          protocol: "TCP"
+        - image: "anuruddhal/sample2:1.0.0"
+          name: "hello-app-container"
+          ports:
+            - containerPort: 9096

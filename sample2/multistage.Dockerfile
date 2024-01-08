@@ -7,8 +7,8 @@ WORKDIR /home/work-dir/
 RUN bal build
 
 FROM eclipse-temurin:17-jre-jammy
-COPY --from=bal-builder home/work-dir/target/bin/sample1.jar /home/ballerina/
+COPY --from=bal-builder home/work-dir/target/bin/sample2.jar /home/ballerina/
 EXPOSE  9096
 WORKDIR /home/ballerina
-CMD java -jar sample1.jar
+CMD java -jar sample2.jar
 
