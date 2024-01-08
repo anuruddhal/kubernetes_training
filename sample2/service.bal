@@ -1,9 +1,9 @@
 import ballerina/http;
-import ballerina/io;
+import ballerina/log;
 
 service http:Service /hello on new http:Listener(9096) {
-    resource function get world (http:Caller caller) returns error? {
-        io:println("Request Recieved");
-        check caller->respond("Hello From Docker");
+    resource function get world() returns string {
+        log:printInfo("serving request from world");
+        return "Hello, World!";
     }
 }
