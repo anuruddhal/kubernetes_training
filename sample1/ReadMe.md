@@ -1,5 +1,7 @@
+# Docker Basics
 docker run postgres:9.6
 
+## Docker Build
 docker build -t anuruddhal/sample1:1.0.0 .
 
 docker run anuruddhal/sample1:1.0.0
