@@ -1,9 +1,8 @@
-docker build -f multistage.Dockerfile -t anuruddhal/sample1:1.0.0 . --platform linux/amd64
+docker build -f multistage.Dockerfile -t anuruddhal/sample2:1.0.0 . --platform linux/amd64
 
 docker run -d -p 9096:9096 anuruddhal/sample2:1.0.0
 
 curl http://localhost:9096/hello/world
-
 
 docker login
 
